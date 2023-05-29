@@ -1,0 +1,12 @@
+- name: install supervisor
+  apt:
+    name: supervisor
+    state: latest
+  become: yes
+
+- name: ensure supervisor is started and set to start on boot
+  service:
+    name: supervisor
+    state: started
+    enabled: yes
+  become: yes
